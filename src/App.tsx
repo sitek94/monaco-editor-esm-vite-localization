@@ -1,3 +1,4 @@
+import isPrime from 'just-is-prime'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -14,6 +15,8 @@ export function App() {
         </a>
       </div>
       <h1>__APP_TITLE__</h1>
+
+      <h2>Is 2 prime? {`${isPrime(2)}`}</h2>
     </>
   )
 }
