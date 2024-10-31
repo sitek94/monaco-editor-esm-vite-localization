@@ -21,6 +21,8 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
+
+    // "typeRoots": ["./src/global.d.ts"]
   },
-  "include": ["src"]
+  "include": ["vendors", "src", "src/global.d.ts"]
 }
