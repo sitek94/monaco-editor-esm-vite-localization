@@ -1,23 +1,28 @@
-import isPrime from "just-is-prime"
 import reactLogo from "./assets/react.svg"
 import viteLogo from "/vite.svg"
 import "./App.css"
 import { CodeEditor } from "./code-editor"
 
-import spanish from "./locales/es.json"
+import { Locale, translations } from "./locales"
 
-const locale = (window.localStorage.getItem("locale") as "es" | "en") || "en"
+const initialLocale = window.localStorage.getItem("locale") || "en"
+window.__MONACO_TRANSLATIONS__ = translations[initialLocale as Locale]
+window.__MONACO_DEBUG__ = true
 
-window.__TRANSLATIONS__ = locale === "es" ? spanish : ({} as any)
+const setLocale = (locale: Locale) => {
+  window.localStorage.setItem("locale", locale)
+  window.__MONACO_TRANSLATIONS__ = translations[locale]
+  window.location.reload()
+}
+
+const options = [
+  { locale: "es", label: "🇪🇸 Spain" },
+  { locale: "en", label: "🇬🇧 English" },
+  { locale: "de", label: "🇩🇪 Germany" },
+  { locale: "pl", label: "🇵🇱 Poland" },
+] satisfies { locale: Locale; label: string }[]
 
 export function App() {
-  const setLocale = (lang: "en" | "es") => {
-    window.localStorage.setItem("locale", lang)
-
-    // refresh the page
-    window.location.reload()
-  }
-
   return (
     <>
       <div>
@@ -28,12 +33,22 @@ export function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>__APP_TITLE__</h1>
 
-      <button onClick={() => setLocale("es")}>🇪🇸 Spain</button>
-      <button onClick={() => setLocale("en")}>🇬🇧 English</button>
+      {options.map(({ locale, label }) => (
+        <label key={locale}>
+          <input
+            checked={initialLocale === locale}
+            type="radio"
+            name="locale"
+            value={locale}
+            onChange={() => setLocale(locale)}
+          />
+          {label}
+        </label>
+      ))}
 
-      <h2>Is 2 prime? {`${isPrime(2)}`}</h2>
+      <br />
+      <br />
 
       <CodeEditor />
     </>

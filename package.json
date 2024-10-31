@@ -11,9 +11,7 @@
   },
   "dependencies": {
     "@monaco-editor/loader": "^1.4.0",
-    "just-is-prime": "^2.3.0",
-    "monaco-editor": "^0.52.0",
-    "monaco-editor-nls": "^3.1.0",
+    "monaco-editor": "0.52.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
@@ -28,10 +26,11 @@
     "globals": "^15.11.0",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.11.0",
-    "vite": "^5.4.10",
-    "vite-plugin-inspect": "^0.8.7"
+    "vite": "^5.4.10"
   },
   "pnpm": {
-    "patchedDependencies": {}
+    "patchedDependencies": {
+      "monaco-editor@0.52.0": "patches/monaco-editor@0.52.0.patch"
+    }
   }
 }
