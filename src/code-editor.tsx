@@ -1,28 +1,27 @@
 import loader from "@monaco-editor/loader"
 
-import type { editor as Editor } from "monaco-editor"
-import editorWorker from "monaco-editor/esm/vs/editor/editor.worker?worker"
+import { editor, type editor as Editor } from "monaco-editor"
+// import editorWorker from "monaco-editor/esm/vs/editor/editor.worker?worker"
 import jsonWorker from "monaco-editor/esm/vs/language/json/json.worker?worker"
 import cssWorker from "monaco-editor/esm/vs/language/css/css.worker?worker"
 import htmlWorker from "monaco-editor/esm/vs/language/html/html.worker?worker"
 import tsWorker from "monaco-editor/esm/vs/language/typescript/ts.worker?worker"
 import { useEffect, useRef } from "react"
 
+import { translationsMap } from "./monaco-editor/locales"
+
 self.MonacoEnvironment = {
   getWorker(_, label) {
-    if (label === "json") {
-      return new jsonWorker()
-    }
-    if (label === "css" || label === "scss" || label === "less") {
-      return new cssWorker()
-    }
-    if (label === "html" || label === "handlebars" || label === "razor") {
-      return new htmlWorker()
-    }
-    if (label === "typescript" || label === "javascript") {
-      return new tsWorker()
-    }
-    return new editorWorker()
+    const worker = new Worker(new URL("monaco-editor/esm/vs/editor/editor.worker.js", import.meta.url), {
+      type: "module",
+    })
+
+    worker.postMessage({
+      type: "INIT",
+      translations: translationsMap["es"],
+    })
+
+    return worker
   },
 }
 
@@ -40,7 +39,7 @@ export function CodeEditor() {
         loader.init().then((monaco) => {
           editorRef.current = monaco.editor.create(ref.current!, {
             value: `function hello() {\n\talert('Hello world!');\n}`,
-            language: "javascript",
+            // language: "javascript",
           })
         })
       }

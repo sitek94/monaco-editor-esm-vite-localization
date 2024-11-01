@@ -20,8 +20,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
 
+    "allowJs": true
     // "typeRoots": ["./src/global.d.ts"]
   },
   "include": ["vendors", "src", "src/global.d.ts"]

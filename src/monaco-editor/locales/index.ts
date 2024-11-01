@@ -2,7 +2,7 @@ import es from "./es.json"
 import de from "./de.json"
 import pl from "./pl.json"
 
-export const translations = {
+export const translationsMap = {
   es,
   en: {},
   de,
@@ -15,4 +15,5 @@ export const translations = {
   }
 }
 
-export type Locale = keyof typeof translations
+export type Locale = keyof typeof translationsMap
+export type Translations = (typeof translationsMap)[Locale]

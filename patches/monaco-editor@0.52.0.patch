@@ -508,7 +508,7 @@ index b8f05d32df39bc8dba5445b0e481966f9c0fef69..1714c53b1da9f92591adb840d04b60f6
                                      this._commandService.executeCommand('workbench.action.openSettings2', {
                                          query: 'editor.multiCursorLimit'
 diff --git a/esm/vs/editor/browser/widget/diffEditor/commands.js b/esm/vs/editor/browser/widget/diffEditor/commands.js
-index cc9d59d15fbc2bfeed389db87d3191237f3d19a3..3a734205e7dae8651a309ae502e8cacd766e5ca8 100644
+index cc9d59d15fbc2bfeed389db87d3191237f3d19a3..cf70eb43470a9f106d380b08eb0b221a4f85059d 100644
 --- a/esm/vs/editor/browser/widget/diffEditor/commands.js
 +++ b/esm/vs/editor/browser/widget/diffEditor/commands.js
 @@ -17,7 +17,7 @@ export class ToggleCollapseUnchangedRegions extends Action2 {
@@ -516,7 +516,7 @@ index cc9d59d15fbc2bfeed389db87d3191237f3d19a3..3a734205e7dae8651a309ae502e8cacd
          super({
              id: 'diffEditor.toggleCollapseUnchangedRegions',
 -            title: localize2('toggleCollapseUnchangedRegions', 'Toggle Collapse Unchanged Regions'),
-+            title: localize2('vs/editor/browser/widget/diffEditor/commands', 'vs/editor/browser/widget/diffEditor/commands', 'toggleCollapseUnchangedRegions', 'Toggle Collapse Unchanged Regions'),
++            title: localize2('vs/editor/browser/widget/diffEditor/commands', 'toggleCollapseUnchangedRegions', 'Toggle Collapse Unchanged Regions'),
              icon: Codicon.map,
              toggled: ContextKeyExpr.has('config.diffEditor.hideUnchangedRegions.enabled'),
              precondition: ContextKeyExpr.has('isInDiffEditor'),
@@ -525,7 +525,7 @@ index cc9d59d15fbc2bfeed389db87d3191237f3d19a3..3a734205e7dae8651a309ae502e8cacd
          super({
              id: 'diffEditor.toggleShowMovedCodeBlocks',
 -            title: localize2('toggleShowMovedCodeBlocks', 'Toggle Show Moved Code Blocks'),
-+            title: localize2('vs/editor/browser/widget/diffEditor/commands', 'vs/editor/browser/widget/diffEditor/commands', 'toggleShowMovedCodeBlocks', 'Toggle Show Moved Code Blocks'),
++            title: localize2('vs/editor/browser/widget/diffEditor/commands', 'toggleShowMovedCodeBlocks', 'Toggle Show Moved Code Blocks'),
              precondition: ContextKeyExpr.has('isInDiffEditor'),
          });
      }
@@ -534,7 +534,7 @@ index cc9d59d15fbc2bfeed389db87d3191237f3d19a3..3a734205e7dae8651a309ae502e8cacd
          super({
              id: 'diffEditor.toggleUseInlineViewWhenSpaceIsLimited',
 -            title: localize2('toggleUseInlineViewWhenSpaceIsLimited', 'Toggle Use Inline View When Space Is Limited'),
-+            title: localize2('vs/editor/browser/widget/diffEditor/commands', 'vs/editor/browser/widget/diffEditor/commands', 'toggleUseInlineViewWhenSpaceIsLimited', 'Toggle Use Inline View When Space Is Limited'),
++            title: localize2('vs/editor/browser/widget/diffEditor/commands', 'toggleUseInlineViewWhenSpaceIsLimited', 'Toggle Use Inline View When Space Is Limited'),
              precondition: ContextKeyExpr.has('isInDiffEditor'),
          });
      }
@@ -543,13 +543,13 @@ index cc9d59d15fbc2bfeed389db87d3191237f3d19a3..3a734205e7dae8651a309ae502e8cacd
      }
  }
 -const diffEditorCategory = localize2('diffEditor', "Diff Editor");
-+const diffEditorCategory = localize2('vs/editor/browser/widget/diffEditor/commands', 'vs/editor/browser/widget/diffEditor/commands', 'diffEditor', "Diff Editor");
++const diffEditorCategory = localize2('vs/editor/browser/widget/diffEditor/commands', 'diffEditor', "Diff Editor");
  export class SwitchSide extends EditorAction2 {
      constructor() {
          super({
              id: 'diffEditor.switchSide',
 -            title: localize2('switchSide', 'Switch Side'),
-+            title: localize2('vs/editor/browser/widget/diffEditor/commands', 'vs/editor/browser/widget/diffEditor/commands', 'switchSide', 'Switch Side'),
++            title: localize2('vs/editor/browser/widget/diffEditor/commands', 'switchSide', 'Switch Side'),
              icon: Codicon.arrowSwap,
              precondition: ContextKeyExpr.has('isInDiffEditor'),
              f1: true,
@@ -558,7 +558,7 @@ index cc9d59d15fbc2bfeed389db87d3191237f3d19a3..3a734205e7dae8651a309ae502e8cacd
          super({
              id: 'diffEditor.exitCompareMove',
 -            title: localize2('exitCompareMove', 'Exit Compare Move'),
-+            title: localize2('vs/editor/browser/widget/diffEditor/commands', 'vs/editor/browser/widget/diffEditor/commands', 'exitCompareMove', 'Exit Compare Move'),
++            title: localize2('vs/editor/browser/widget/diffEditor/commands', 'exitCompareMove', 'Exit Compare Move'),
              icon: Codicon.close,
              precondition: EditorContextKeys.comparingMovedCode,
              f1: false,
@@ -567,7 +567,7 @@ index cc9d59d15fbc2bfeed389db87d3191237f3d19a3..3a734205e7dae8651a309ae502e8cacd
          super({
              id: 'diffEditor.collapseAllUnchangedRegions',
 -            title: localize2('collapseAllUnchangedRegions', 'Collapse All Unchanged Regions'),
-+            title: localize2('vs/editor/browser/widget/diffEditor/commands', 'vs/editor/browser/widget/diffEditor/commands', 'collapseAllUnchangedRegions', 'Collapse All Unchanged Regions'),
++            title: localize2('vs/editor/browser/widget/diffEditor/commands', 'collapseAllUnchangedRegions', 'Collapse All Unchanged Regions'),
              icon: Codicon.fold,
              precondition: ContextKeyExpr.has('isInDiffEditor'),
              f1: true,
@@ -576,7 +576,7 @@ index cc9d59d15fbc2bfeed389db87d3191237f3d19a3..3a734205e7dae8651a309ae502e8cacd
          super({
              id: 'diffEditor.showAllUnchangedRegions',
 -            title: localize2('showAllUnchangedRegions', 'Show All Unchanged Regions'),
-+            title: localize2('vs/editor/browser/widget/diffEditor/commands', 'vs/editor/browser/widget/diffEditor/commands', 'showAllUnchangedRegions', 'Show All Unchanged Regions'),
++            title: localize2('vs/editor/browser/widget/diffEditor/commands', 'showAllUnchangedRegions', 'Show All Unchanged Regions'),
              icon: Codicon.unfold,
              precondition: ContextKeyExpr.has('isInDiffEditor'),
              f1: true,
@@ -585,7 +585,7 @@ index cc9d59d15fbc2bfeed389db87d3191237f3d19a3..3a734205e7dae8651a309ae502e8cacd
          super({
              id: 'diffEditor.revert',
 -            title: localize2('revert', 'Revert'),
-+            title: localize2('vs/editor/browser/widget/diffEditor/commands', 'vs/editor/browser/widget/diffEditor/commands', 'revert', 'Revert'),
++            title: localize2('vs/editor/browser/widget/diffEditor/commands', 'revert', 'Revert'),
              f1: false,
              category: diffEditorCategory,
          });
@@ -594,14 +594,14 @@ index cc9d59d15fbc2bfeed389db87d3191237f3d19a3..3a734205e7dae8651a309ae502e8cacd
      }
  }
 -const accessibleDiffViewerCategory = localize2('accessibleDiffViewer', "Accessible Diff Viewer");
-+const accessibleDiffViewerCategory = localize2('vs/editor/browser/widget/diffEditor/commands', 'vs/editor/browser/widget/diffEditor/commands', 'accessibleDiffViewer', "Accessible Diff Viewer");
++const accessibleDiffViewerCategory = localize2('vs/editor/browser/widget/diffEditor/commands', 'accessibleDiffViewer', "Accessible Diff Viewer");
  export class AccessibleDiffViewerNext extends Action2 {
      static { this.id = 'editor.action.accessibleDiffViewer.next'; }
      constructor() {
          super({
              id: AccessibleDiffViewerNext.id,
 -            title: localize2('editor.action.accessibleDiffViewer.next', 'Go to Next Difference'),
-+            title: localize2('vs/editor/browser/widget/diffEditor/commands', 'vs/editor/browser/widget/diffEditor/commands', 'editor.action.accessibleDiffViewer.next', 'Go to Next Difference'),
++            title: localize2('vs/editor/browser/widget/diffEditor/commands', 'editor.action.accessibleDiffViewer.next', 'Go to Next Difference'),
              category: accessibleDiffViewerCategory,
              precondition: ContextKeyExpr.has('isInDiffEditor'),
              keybinding: {
@@ -610,7 +610,7 @@ index cc9d59d15fbc2bfeed389db87d3191237f3d19a3..3a734205e7dae8651a309ae502e8cacd
          super({
              id: AccessibleDiffViewerPrev.id,
 -            title: localize2('editor.action.accessibleDiffViewer.prev', 'Go to Previous Difference'),
-+            title: localize2('vs/editor/browser/widget/diffEditor/commands', 'vs/editor/browser/widget/diffEditor/commands', 'editor.action.accessibleDiffViewer.prev', 'Go to Previous Difference'),
++            title: localize2('vs/editor/browser/widget/diffEditor/commands', 'editor.action.accessibleDiffViewer.prev', 'Go to Previous Difference'),
              category: accessibleDiffViewerCategory,
              precondition: ContextKeyExpr.has('isInDiffEditor'),
              keybinding: {
@@ -3478,7 +3478,7 @@ index 2a7c451b54e2abb95d9374aa778d8c9d6206cb65..c9805863b653d6003444e0549a230c0f
              precondition: SelectionAnchorSet,
              kbOpts: {
 diff --git a/esm/vs/editor/contrib/bracketMatching/browser/bracketMatching.js b/esm/vs/editor/contrib/bracketMatching/browser/bracketMatching.js
-index a99e7a2a77e8705537a0c64ab12bd3b3b54dc0b8..2e424355aec0306dab41060e82024566d03039aa 100644
+index a99e7a2a77e8705537a0c64ab12bd3b3b54dc0b8..ddd12069b7d7c511609dc6b9b52d998fe4f3a265 100644
 --- a/esm/vs/editor/contrib/bracketMatching/browser/bracketMatching.js
 +++ b/esm/vs/editor/contrib/bracketMatching/browser/bracketMatching.js
 @@ -16,12 +16,12 @@ import * as nls from '../../../../nls.js';
@@ -3506,7 +3506,7 @@ index a99e7a2a77e8705537a0c64ab12bd3b3b54dc0b8..2e424355aec0306dab41060e82024566
              precondition: undefined,
              metadata: {
 -                description: nls.localize2('smartSelect.selectToBracketDescription', "Select the text inside and including the brackets or curly braces"),
-+                description: nls.localize2('vs/editor/contrib/bracketMatching/browser/bracketMatching', 'vs/editor/contrib/bracketMatching/browser/bracketMatching', 'smartSelect.selectToBracketDescription', "Select the text inside and including the brackets or curly braces"),
++                description: nls.localize2('vs/editor/contrib/bracketMatching/browser/bracketMatching', 'smartSelect.selectToBracketDescription', "Select the text inside and including the brackets or curly braces"),
                  args: [{
                          name: 'args',
                          schema: {
@@ -3564,7 +3564,7 @@ index 5e22a02639c8557ac238a7248f140759c6b10a75..b516fa1778b6e1a771eff4adf09f9c0a
              precondition: EditorContextKeys.writable,
              kbOpts: {
 diff --git a/esm/vs/editor/contrib/clipboard/browser/clipboard.js b/esm/vs/editor/contrib/clipboard/browser/clipboard.js
-index a1deb14b9174989775f3bbe2c7d2370644633237..2ae31a15d75636da2fe33418f5d2aeddeac857c2 100644
+index a1deb14b9174989775f3bbe2c7d2370644633237..fb8f55435da2ac327451428922b110c240393768 100644
 --- a/esm/vs/editor/contrib/clipboard/browser/clipboard.js
 +++ b/esm/vs/editor/contrib/clipboard/browser/clipboard.js
 @@ -39,23 +39,23 @@ export const CutAction = supportsCut ? registerCommand(new MultiCommand({
@@ -3626,10 +3626,10 @@ index a1deb14b9174989775f3bbe2c7d2370644633237..2ae31a15d75636da2fe33418f5d2aedd
 -MenuRegistry.appendMenuItem(MenuId.EditorContext, { submenu: MenuId.EditorContextCopy, title: nls.localize2('copy as', "Copy As"), group: CLIPBOARD_CONTEXT_MENU_GROUP, order: 3 });
 -MenuRegistry.appendMenuItem(MenuId.EditorContext, { submenu: MenuId.EditorContextShare, title: nls.localize2('share', "Share"), group: '11_share', order: -1, when: ContextKeyExpr.and(ContextKeyExpr.notEquals('resourceScheme', 'output'), EditorContextKeys.editorTextFocus) });
 -MenuRegistry.appendMenuItem(MenuId.ExplorerContext, { submenu: MenuId.ExplorerContextShare, title: nls.localize2('share', "Share"), group: '11_share', order: -1 });
-+MenuRegistry.appendMenuItem(MenuId.MenubarEditMenu, { submenu: MenuId.MenubarCopy, title: nls.localize2('vs/editor/contrib/clipboard/browser/clipboard', 'vs/editor/contrib/clipboard/browser/clipboard', 'copy as', "Copy As"), group: '2_ccp', order: 3 });
-+MenuRegistry.appendMenuItem(MenuId.EditorContext, { submenu: MenuId.EditorContextCopy, title: nls.localize2('vs/editor/contrib/clipboard/browser/clipboard', 'vs/editor/contrib/clipboard/browser/clipboard', 'copy as', "Copy As"), group: CLIPBOARD_CONTEXT_MENU_GROUP, order: 3 });
-+MenuRegistry.appendMenuItem(MenuId.EditorContext, { submenu: MenuId.EditorContextShare, title: nls.localize2('vs/editor/contrib/clipboard/browser/clipboard', 'vs/editor/contrib/clipboard/browser/clipboard', 'share', "Share"), group: '11_share', order: -1, when: ContextKeyExpr.and(ContextKeyExpr.notEquals('resourceScheme', 'output'), EditorContextKeys.editorTextFocus) });
-+MenuRegistry.appendMenuItem(MenuId.ExplorerContext, { submenu: MenuId.ExplorerContextShare, title: nls.localize2('vs/editor/contrib/clipboard/browser/clipboard', 'vs/editor/contrib/clipboard/browser/clipboard', 'share', "Share"), group: '11_share', order: -1 });
++MenuRegistry.appendMenuItem(MenuId.MenubarEditMenu, { submenu: MenuId.MenubarCopy, title: nls.localize2('vs/editor/contrib/clipboard/browser/clipboard', 'copy as', "Copy As"), group: '2_ccp', order: 3 });
++MenuRegistry.appendMenuItem(MenuId.EditorContext, { submenu: MenuId.EditorContextCopy, title: nls.localize2('vs/editor/contrib/clipboard/browser/clipboard', 'copy as', "Copy As"), group: CLIPBOARD_CONTEXT_MENU_GROUP, order: 3 });
++MenuRegistry.appendMenuItem(MenuId.EditorContext, { submenu: MenuId.EditorContextShare, title: nls.localize2('vs/editor/contrib/clipboard/browser/clipboard', 'share', "Share"), group: '11_share', order: -1, when: ContextKeyExpr.and(ContextKeyExpr.notEquals('resourceScheme', 'output'), EditorContextKeys.editorTextFocus) });
++MenuRegistry.appendMenuItem(MenuId.ExplorerContext, { submenu: MenuId.ExplorerContextShare, title: nls.localize2('vs/editor/contrib/clipboard/browser/clipboard', 'share', "Share"), group: '11_share', order: -1 });
  export const PasteAction = supportsPaste ? registerCommand(new MultiCommand({
      id: 'editor.action.clipboardPasteAction',
      precondition: undefined,
@@ -4028,7 +4028,7 @@ index c212b687aae6a64b8edf5ffd99a451a526a390d2..707e5bba13c32754c2a96bc3ec74655a
          this._register(dom.addDisposableListener(this._button, dom.EventType.CLICK, () => {
              this._onClicked.fire();
 diff --git a/esm/vs/editor/contrib/colorPicker/browser/standaloneColorPickerActions.js b/esm/vs/editor/contrib/colorPicker/browser/standaloneColorPickerActions.js
-index 9257b89e4bf1e1503ca50afeb3cc1e954c9c993b..7b51be67a455b570e9104867703620353c27202c 100644
+index 9257b89e4bf1e1503ca50afeb3cc1e954c9c993b..b92e1930125e311ca9ecf67691eb3be83da3b4b7 100644
 --- a/esm/vs/editor/contrib/colorPicker/browser/standaloneColorPickerActions.js
 +++ b/esm/vs/editor/contrib/colorPicker/browser/standaloneColorPickerActions.js
 @@ -13,15 +13,15 @@ export class ShowOrFocusStandaloneColorPicker extends EditorAction2 {
@@ -4037,7 +4037,7 @@ index 9257b89e4bf1e1503ca50afeb3cc1e954c9c993b..7b51be67a455b570e910486770362035
              title: {
 -                ...localize2('showOrFocusStandaloneColorPicker', "Show or Focus Standalone Color Picker"),
 -                mnemonicTitle: localize({ key: 'mishowOrFocusStandaloneColorPicker', comment: ['&& denotes a mnemonic'] }, "&&Show or Focus Standalone Color Picker"),
-+                ...localize2('vs/editor/contrib/colorPicker/browser/standaloneColorPickerActions', 'vs/editor/contrib/colorPicker/browser/standaloneColorPickerActions', 'showOrFocusStandaloneColorPicker', "Show or Focus Standalone Color Picker"),
++                ...localize2('vs/editor/contrib/colorPicker/browser/standaloneColorPickerActions', 'showOrFocusStandaloneColorPicker', "Show or Focus Standalone Color Picker"),
 +                mnemonicTitle: localize('vs/editor/contrib/colorPicker/browser/standaloneColorPickerActions', { key: 'mishowOrFocusStandaloneColorPicker', comment: ['&& denotes a mnemonic'] }, "&&Show or Focus Standalone Color Picker"),
              },
              precondition: undefined,
@@ -4046,7 +4046,7 @@ index 9257b89e4bf1e1503ca50afeb3cc1e954c9c993b..7b51be67a455b570e910486770362035
              ],
              metadata: {
 -                description: localize2('showOrFocusStandaloneColorPickerDescription', "Show or focus a standalone color picker which uses the default color provider. It displays hex/rgb/hsl colors."),
-+                description: localize2('vs/editor/contrib/colorPicker/browser/standaloneColorPickerActions', 'vs/editor/contrib/colorPicker/browser/standaloneColorPickerActions', 'showOrFocusStandaloneColorPickerDescription', "Show or focus a standalone color picker which uses the default color provider. It displays hex/rgb/hsl colors."),
++                description: localize2('vs/editor/contrib/colorPicker/browser/standaloneColorPickerActions', 'showOrFocusStandaloneColorPickerDescription', "Show or focus a standalone color picker which uses the default color provider. It displays hex/rgb/hsl colors."),
              }
          });
      }
@@ -4064,7 +4064,7 @@ index 9257b89e4bf1e1503ca50afeb3cc1e954c9c993b..7b51be67a455b570e910486770362035
              },
              metadata: {
 -                description: localize2('hideColorPickerDescription', "Hide the standalone color picker."),
-+                description: localize2('vs/editor/contrib/colorPicker/browser/standaloneColorPickerActions', 'vs/editor/contrib/colorPicker/browser/standaloneColorPickerActions', 'hideColorPickerDescription', "Hide the standalone color picker."),
++                description: localize2('vs/editor/contrib/colorPicker/browser/standaloneColorPickerActions', 'hideColorPickerDescription', "Hide the standalone color picker."),
              }
          });
      }
@@ -4082,7 +4082,7 @@ index 9257b89e4bf1e1503ca50afeb3cc1e954c9c993b..7b51be67a455b570e910486770362035
              },
              metadata: {
 -                description: localize2('insertColorWithStandaloneColorPickerDescription', "Insert hex/rgb/hsl colors with the focused standalone color picker."),
-+                description: localize2('vs/editor/contrib/colorPicker/browser/standaloneColorPickerActions', 'vs/editor/contrib/colorPicker/browser/standaloneColorPickerActions', 'insertColorWithStandaloneColorPickerDescription', "Insert hex/rgb/hsl colors with the focused standalone color picker."),
++                description: localize2('vs/editor/contrib/colorPicker/browser/standaloneColorPickerActions', 'insertColorWithStandaloneColorPickerDescription', "Insert hex/rgb/hsl colors with the focused standalone color picker."),
              }
          });
      }
@@ -5081,7 +5081,7 @@ index 38d44bc71548a109da1cd0dc8f1bc34a4cb8d290..09fdee8280dfec43ddbf6706ca4bdb75
 +const editorMarkerNavigationInfoHeader = registerColor('editorMarkerNavigationInfo.headerBackground', { dark: transparent(editorMarkerNavigationInfo, .1), light: transparent(editorMarkerNavigationInfo, .1), hcDark: null, hcLight: null }, nls.localize('vs/editor/contrib/gotoError/browser/gotoErrorWidget', 'editorMarkerNavigationInfoHeaderBackground', 'Editor marker navigation widget info heading background.'));
 +const editorMarkerNavigationBackground = registerColor('editorMarkerNavigation.background', editorBackground, nls.localize('vs/editor/contrib/gotoError/browser/gotoErrorWidget', 'editorMarkerNavigationBackground', 'Editor marker navigation widget background.'));
 diff --git a/esm/vs/editor/contrib/gotoSymbol/browser/goToCommands.js b/esm/vs/editor/contrib/gotoSymbol/browser/goToCommands.js
-index dfcade3d06a8e9549a7fa283d9fe4d7894fd9e56..775555db4d48f49fdc1575dddb5481042d659bc1 100644
+index dfcade3d06a8e9549a7fa283d9fe4d7894fd9e56..d9239f9239b3d4437d84e62f694732407df8e44c 100644
 --- a/esm/vs/editor/contrib/gotoSymbol/browser/goToCommands.js
 +++ b/esm/vs/editor/contrib/gotoSymbol/browser/goToCommands.js
 @@ -34,7 +34,7 @@ import { Iterable } from '../../../../base/common/iterator.js';
@@ -5115,7 +5115,7 @@ index dfcade3d06a8e9549a7fa283d9fe4d7894fd9e56..775555db4d48f49fdc1575dddb548104
              title: {
 -                ...nls.localize2('actions.goToDecl.label', "Go to Definition"),
 -                mnemonicTitle: nls.localize({ key: 'miGotoDefinition', comment: ['&& denotes a mnemonic'] }, "Go to &&Definition"),
-+                ...nls.localize2('vs/editor/contrib/gotoSymbol/browser/goToCommands', 'vs/editor/contrib/gotoSymbol/browser/goToCommands', 'actions.goToDecl.label', "Go to Definition"),
++                ...nls.localize2('vs/editor/contrib/gotoSymbol/browser/goToCommands', 'actions.goToDecl.label', "Go to Definition"),
 +                mnemonicTitle: nls.localize('vs/editor/contrib/gotoSymbol/browser/goToCommands', { key: 'miGotoDefinition', comment: ['&& denotes a mnemonic'] }, "Go to &&Definition"),
              },
              precondition: EditorContextKeys.hasDefinitionProvider,
@@ -5125,7 +5125,7 @@ index dfcade3d06a8e9549a7fa283d9fe4d7894fd9e56..775555db4d48f49fdc1575dddb548104
          }, {
              id: OpenDefinitionToSideAction.id,
 -            title: nls.localize2('actions.goToDeclToSide.label', "Open Definition to the Side"),
-+            title: nls.localize2('vs/editor/contrib/gotoSymbol/browser/goToCommands', 'vs/editor/contrib/gotoSymbol/browser/goToCommands', 'actions.goToDeclToSide.label', "Open Definition to the Side"),
++            title: nls.localize2('vs/editor/contrib/gotoSymbol/browser/goToCommands', 'actions.goToDeclToSide.label', "Open Definition to the Side"),
              precondition: ContextKeyExpr.and(EditorContextKeys.hasDefinitionProvider, EditorContextKeys.isInEmbeddedEditor.toNegated()),
              keybinding: [{
                      when: EditorContextKeys.editorTextFocus,
@@ -5134,7 +5134,7 @@ index dfcade3d06a8e9549a7fa283d9fe4d7894fd9e56..775555db4d48f49fdc1575dddb548104
          }, {
              id: PeekDefinitionAction.id,
 -            title: nls.localize2('actions.previewDecl.label', "Peek Definition"),
-+            title: nls.localize2('vs/editor/contrib/gotoSymbol/browser/goToCommands', 'vs/editor/contrib/gotoSymbol/browser/goToCommands', 'actions.previewDecl.label', "Peek Definition"),
++            title: nls.localize2('vs/editor/contrib/gotoSymbol/browser/goToCommands', 'actions.previewDecl.label', "Peek Definition"),
              precondition: ContextKeyExpr.and(EditorContextKeys.hasDefinitionProvider, PeekContext.notInPeekEditor, EditorContextKeys.isInEmbeddedEditor.toNegated()),
              keybinding: {
                  when: EditorContextKeys.editorTextFocus,
@@ -5160,7 +5160,7 @@ index dfcade3d06a8e9549a7fa283d9fe4d7894fd9e56..775555db4d48f49fdc1575dddb548104
              title: {
 -                ...nls.localize2('actions.goToDeclaration.label', "Go to Declaration"),
 -                mnemonicTitle: nls.localize({ key: 'miGotoDeclaration', comment: ['&& denotes a mnemonic'] }, "Go to &&Declaration"),
-+                ...nls.localize2('vs/editor/contrib/gotoSymbol/browser/goToCommands', 'vs/editor/contrib/gotoSymbol/browser/goToCommands', 'actions.goToDeclaration.label', "Go to Declaration"),
++                ...nls.localize2('vs/editor/contrib/gotoSymbol/browser/goToCommands', 'actions.goToDeclaration.label', "Go to Declaration"),
 +                mnemonicTitle: nls.localize('vs/editor/contrib/gotoSymbol/browser/goToCommands', { key: 'miGotoDeclaration', comment: ['&& denotes a mnemonic'] }, "Go to &&Declaration"),
              },
              precondition: ContextKeyExpr.and(EditorContextKeys.hasDeclarationProvider, EditorContextKeys.isInEmbeddedEditor.toNegated()),
@@ -5181,7 +5181,7 @@ index dfcade3d06a8e9549a7fa283d9fe4d7894fd9e56..775555db4d48f49fdc1575dddb548104
          }, {
              id: 'editor.action.peekDeclaration',
 -            title: nls.localize2('actions.peekDecl.label', "Peek Declaration"),
-+            title: nls.localize2('vs/editor/contrib/gotoSymbol/browser/goToCommands', 'vs/editor/contrib/gotoSymbol/browser/goToCommands', 'actions.peekDecl.label', "Peek Declaration"),
++            title: nls.localize2('vs/editor/contrib/gotoSymbol/browser/goToCommands', 'actions.peekDecl.label', "Peek Declaration"),
              precondition: ContextKeyExpr.and(EditorContextKeys.hasDeclarationProvider, PeekContext.notInPeekEditor, EditorContextKeys.isInEmbeddedEditor.toNegated()),
              menu: {
                  id: MenuId.EditorContextPeek,
@@ -5207,7 +5207,7 @@ index dfcade3d06a8e9549a7fa283d9fe4d7894fd9e56..775555db4d48f49fdc1575dddb548104
              title: {
 -                ...nls.localize2('actions.goToTypeDefinition.label', "Go to Type Definition"),
 -                mnemonicTitle: nls.localize({ key: 'miGotoTypeDefinition', comment: ['&& denotes a mnemonic'] }, "Go to &&Type Definition"),
-+                ...nls.localize2('vs/editor/contrib/gotoSymbol/browser/goToCommands', 'vs/editor/contrib/gotoSymbol/browser/goToCommands', 'actions.goToTypeDefinition.label', "Go to Type Definition"),
++                ...nls.localize2('vs/editor/contrib/gotoSymbol/browser/goToCommands', 'actions.goToTypeDefinition.label', "Go to Type Definition"),
 +                mnemonicTitle: nls.localize('vs/editor/contrib/gotoSymbol/browser/goToCommands', { key: 'miGotoTypeDefinition', comment: ['&& denotes a mnemonic'] }, "Go to &&Type Definition"),
              },
              precondition: EditorContextKeys.hasTypeDefinitionProvider,
@@ -5217,7 +5217,7 @@ index dfcade3d06a8e9549a7fa283d9fe4d7894fd9e56..775555db4d48f49fdc1575dddb548104
          }, {
              id: PeekTypeDefinitionAction.ID,
 -            title: nls.localize2('actions.peekTypeDefinition.label', "Peek Type Definition"),
-+            title: nls.localize2('vs/editor/contrib/gotoSymbol/browser/goToCommands', 'vs/editor/contrib/gotoSymbol/browser/goToCommands', 'actions.peekTypeDefinition.label', "Peek Type Definition"),
++            title: nls.localize2('vs/editor/contrib/gotoSymbol/browser/goToCommands', 'actions.peekTypeDefinition.label', "Peek Type Definition"),
              precondition: ContextKeyExpr.and(EditorContextKeys.hasTypeDefinitionProvider, PeekContext.notInPeekEditor, EditorContextKeys.isInEmbeddedEditor.toNegated()),
              menu: {
                  id: MenuId.EditorContextPeek,
@@ -5243,7 +5243,7 @@ index dfcade3d06a8e9549a7fa283d9fe4d7894fd9e56..775555db4d48f49fdc1575dddb548104
              title: {
 -                ...nls.localize2('actions.goToImplementation.label', "Go to Implementations"),
 -                mnemonicTitle: nls.localize({ key: 'miGotoImplementation', comment: ['&& denotes a mnemonic'] }, "Go to &&Implementations"),
-+                ...nls.localize2('vs/editor/contrib/gotoSymbol/browser/goToCommands', 'vs/editor/contrib/gotoSymbol/browser/goToCommands', 'actions.goToImplementation.label', "Go to Implementations"),
++                ...nls.localize2('vs/editor/contrib/gotoSymbol/browser/goToCommands', 'actions.goToImplementation.label', "Go to Implementations"),
 +                mnemonicTitle: nls.localize('vs/editor/contrib/gotoSymbol/browser/goToCommands', { key: 'miGotoImplementation', comment: ['&& denotes a mnemonic'] }, "Go to &&Implementations"),
              },
              precondition: EditorContextKeys.hasImplementationProvider,
@@ -5253,7 +5253,7 @@ index dfcade3d06a8e9549a7fa283d9fe4d7894fd9e56..775555db4d48f49fdc1575dddb548104
          }, {
              id: PeekImplementationAction.ID,
 -            title: nls.localize2('actions.peekImplementation.label', "Peek Implementations"),
-+            title: nls.localize2('vs/editor/contrib/gotoSymbol/browser/goToCommands', 'vs/editor/contrib/gotoSymbol/browser/goToCommands', 'actions.peekImplementation.label', "Peek Implementations"),
++            title: nls.localize2('vs/editor/contrib/gotoSymbol/browser/goToCommands', 'actions.peekImplementation.label', "Peek Implementations"),
              precondition: ContextKeyExpr.and(EditorContextKeys.hasImplementationProvider, PeekContext.notInPeekEditor, EditorContextKeys.isInEmbeddedEditor.toNegated()),
              keybinding: {
                  when: EditorContextKeys.editorTextFocus,
@@ -5274,7 +5274,7 @@ index dfcade3d06a8e9549a7fa283d9fe4d7894fd9e56..775555db4d48f49fdc1575dddb548104
              title: {
 -                ...nls.localize2('goToReferences.label', "Go to References"),
 -                mnemonicTitle: nls.localize({ key: 'miGotoReference', comment: ['&& denotes a mnemonic'] }, "Go to &&References"),
-+                ...nls.localize2('vs/editor/contrib/gotoSymbol/browser/goToCommands', 'vs/editor/contrib/gotoSymbol/browser/goToCommands', 'goToReferences.label', "Go to References"),
++                ...nls.localize2('vs/editor/contrib/gotoSymbol/browser/goToCommands', 'goToReferences.label', "Go to References"),
 +                mnemonicTitle: nls.localize('vs/editor/contrib/gotoSymbol/browser/goToCommands', { key: 'miGotoReference', comment: ['&& denotes a mnemonic'] }, "Go to &&References"),
              },
              precondition: ContextKeyExpr.and(EditorContextKeys.hasReferenceProvider, PeekContext.notInPeekEditor, EditorContextKeys.isInEmbeddedEditor.toNegated()),
@@ -5293,7 +5293,7 @@ index dfcade3d06a8e9549a7fa283d9fe4d7894fd9e56..775555db4d48f49fdc1575dddb548104
          }, {
              id: 'editor.action.referenceSearch.trigger',
 -            title: nls.localize2('references.action.label', "Peek References"),
-+            title: nls.localize2('vs/editor/contrib/gotoSymbol/browser/goToCommands', 'vs/editor/contrib/gotoSymbol/browser/goToCommands', 'references.action.label', "Peek References"),
++            title: nls.localize2('vs/editor/contrib/gotoSymbol/browser/goToCommands', 'references.action.label', "Peek References"),
              precondition: ContextKeyExpr.and(EditorContextKeys.hasReferenceProvider, PeekContext.notInPeekEditor, EditorContextKeys.isInEmbeddedEditor.toNegated()),
              menu: {
                  id: MenuId.EditorContextPeek,
@@ -5311,7 +5311,7 @@ index dfcade3d06a8e9549a7fa283d9fe4d7894fd9e56..775555db4d48f49fdc1575dddb548104
          super(config, {
              id: 'editor.action.goToLocation',
 -            title: nls.localize2('label.generic', "Go to Any Symbol"),
-+            title: nls.localize2('vs/editor/contrib/gotoSymbol/browser/goToCommands', 'vs/editor/contrib/gotoSymbol/browser/goToCommands', 'label.generic', "Go to Any Symbol"),
++            title: nls.localize2('vs/editor/contrib/gotoSymbol/browser/goToCommands', 'label.generic', "Go to Any Symbol"),
              precondition: ContextKeyExpr.and(PeekContext.notInPeekEditor, EditorContextKeys.isInEmbeddedEditor.toNegated()),
          });
          this._references = _references;
@@ -5526,7 +5526,7 @@ index 3bc04663928b28d3fa95fbd4f3b2d584f48ef110..a3a3dad501427656d94c5bf08cc87f24
 -export const DECREASE_HOVER_VERBOSITY_ACTION_LABEL = nls.localize({ key: 'decreaseHoverVerbosityLevel', comment: ['Label for action that will decrease the hover verbosity level.'] }, "Decrease Hover Verbosity Level");
 +export const DECREASE_HOVER_VERBOSITY_ACTION_LABEL = nls.localize('vs/editor/contrib/hover/browser/hoverActionIds', { key: 'decreaseHoverVerbosityLevel', comment: ['Label for action that will decrease the hover verbosity level.'] }, "Decrease Hover Verbosity Level");
 diff --git a/esm/vs/editor/contrib/hover/browser/hoverActions.js b/esm/vs/editor/contrib/hover/browser/hoverActions.js
-index 45a117446f60531cf48d2b6ff26103dfa1963e01..94d8972a9fe7079cb2e7c1832c9e72670c6fa8a0 100644
+index 45a117446f60531cf48d2b6ff26103dfa1963e01..411cbb41e5528d1386b8cf370c0401ebaaaff9d8 100644
 --- a/esm/vs/editor/contrib/hover/browser/hoverActions.js
 +++ b/esm/vs/editor/contrib/hover/browser/hoverActions.js
 @@ -22,7 +22,7 @@ export class ShowOrFocusHoverAction extends EditorAction {
@@ -5543,7 +5543,7 @@ index 45a117446f60531cf48d2b6ff26103dfa1963e01..94d8972a9fe7079cb2e7c1832c9e7267
              }, "Show or Focus Hover"),
              metadata: {
 -                description: nls.localize2('showOrFocusHoverDescription', 'Show or focus the editor hover which shows documentation, references, and other content for a symbol at the current cursor position.'),
-+                description: nls.localize2('vs/editor/contrib/hover/browser/hoverActions', 'vs/editor/contrib/hover/browser/hoverActions', 'showOrFocusHoverDescription', 'Show or focus the editor hover which shows documentation, references, and other content for a symbol at the current cursor position.'),
++                description: nls.localize2('vs/editor/contrib/hover/browser/hoverActions', 'showOrFocusHoverDescription', 'Show or focus the editor hover which shows documentation, references, and other content for a symbol at the current cursor position.'),
                  args: [{
                          name: 'args',
                          schema: {
@@ -5574,7 +5574,7 @@ index 45a117446f60531cf48d2b6ff26103dfa1963e01..94d8972a9fe7079cb2e7c1832c9e7267
              precondition: undefined,
              metadata: {
 -                description: nls.localize2('showDefinitionPreviewHoverDescription', 'Show the definition preview hover in the editor.'),
-+                description: nls.localize2('vs/editor/contrib/hover/browser/hoverActions', 'vs/editor/contrib/hover/browser/hoverActions', 'showDefinitionPreviewHoverDescription', 'Show the definition preview hover in the editor.'),
++                description: nls.localize2('vs/editor/contrib/hover/browser/hoverActions', 'showDefinitionPreviewHoverDescription', 'Show the definition preview hover in the editor.'),
              },
          });
      }
@@ -5592,7 +5592,7 @@ index 45a117446f60531cf48d2b6ff26103dfa1963e01..94d8972a9fe7079cb2e7c1832c9e7267
              },
              metadata: {
 -                description: nls.localize2('scrollUpHoverDescription', 'Scroll up the editor hover.')
-+                description: nls.localize2('vs/editor/contrib/hover/browser/hoverActions', 'vs/editor/contrib/hover/browser/hoverActions', 'scrollUpHoverDescription', 'Scroll up the editor hover.')
++                description: nls.localize2('vs/editor/contrib/hover/browser/hoverActions', 'scrollUpHoverDescription', 'Scroll up the editor hover.')
              },
          });
      }
@@ -5610,7 +5610,7 @@ index 45a117446f60531cf48d2b6ff26103dfa1963e01..94d8972a9fe7079cb2e7c1832c9e7267
              },
              metadata: {
 -                description: nls.localize2('scrollDownHoverDescription', 'Scroll down the editor hover.'),
-+                description: nls.localize2('vs/editor/contrib/hover/browser/hoverActions', 'vs/editor/contrib/hover/browser/hoverActions', 'scrollDownHoverDescription', 'Scroll down the editor hover.'),
++                description: nls.localize2('vs/editor/contrib/hover/browser/hoverActions', 'scrollDownHoverDescription', 'Scroll down the editor hover.'),
              },
          });
      }
@@ -5628,7 +5628,7 @@ index 45a117446f60531cf48d2b6ff26103dfa1963e01..94d8972a9fe7079cb2e7c1832c9e7267
              },
              metadata: {
 -                description: nls.localize2('scrollLeftHoverDescription', 'Scroll left the editor hover.'),
-+                description: nls.localize2('vs/editor/contrib/hover/browser/hoverActions', 'vs/editor/contrib/hover/browser/hoverActions', 'scrollLeftHoverDescription', 'Scroll left the editor hover.'),
++                description: nls.localize2('vs/editor/contrib/hover/browser/hoverActions', 'scrollLeftHoverDescription', 'Scroll left the editor hover.'),
              },
          });
      }
@@ -5646,7 +5646,7 @@ index 45a117446f60531cf48d2b6ff26103dfa1963e01..94d8972a9fe7079cb2e7c1832c9e7267
              },
              metadata: {
 -                description: nls.localize2('scrollRightHoverDescription', 'Scroll right the editor hover.')
-+                description: nls.localize2('vs/editor/contrib/hover/browser/hoverActions', 'vs/editor/contrib/hover/browser/hoverActions', 'scrollRightHoverDescription', 'Scroll right the editor hover.')
++                description: nls.localize2('vs/editor/contrib/hover/browser/hoverActions', 'scrollRightHoverDescription', 'Scroll right the editor hover.')
              },
          });
      }
@@ -5664,7 +5664,7 @@ index 45a117446f60531cf48d2b6ff26103dfa1963e01..94d8972a9fe7079cb2e7c1832c9e7267
              },
              metadata: {
 -                description: nls.localize2('pageUpHoverDescription', 'Page up the editor hover.'),
-+                description: nls.localize2('vs/editor/contrib/hover/browser/hoverActions', 'vs/editor/contrib/hover/browser/hoverActions', 'pageUpHoverDescription', 'Page up the editor hover.'),
++                description: nls.localize2('vs/editor/contrib/hover/browser/hoverActions', 'pageUpHoverDescription', 'Page up the editor hover.'),
              },
          });
      }
@@ -5682,7 +5682,7 @@ index 45a117446f60531cf48d2b6ff26103dfa1963e01..94d8972a9fe7079cb2e7c1832c9e7267
              },
              metadata: {
 -                description: nls.localize2('pageDownHoverDescription', 'Page down the editor hover.'),
-+                description: nls.localize2('vs/editor/contrib/hover/browser/hoverActions', 'vs/editor/contrib/hover/browser/hoverActions', 'pageDownHoverDescription', 'Page down the editor hover.'),
++                description: nls.localize2('vs/editor/contrib/hover/browser/hoverActions', 'pageDownHoverDescription', 'Page down the editor hover.'),
              },
          });
      }
@@ -5700,7 +5700,7 @@ index 45a117446f60531cf48d2b6ff26103dfa1963e01..94d8972a9fe7079cb2e7c1832c9e7267
              },
              metadata: {
 -                description: nls.localize2('goToTopHoverDescription', 'Go to the top of the editor hover.'),
-+                description: nls.localize2('vs/editor/contrib/hover/browser/hoverActions', 'vs/editor/contrib/hover/browser/hoverActions', 'goToTopHoverDescription', 'Go to the top of the editor hover.'),
++                description: nls.localize2('vs/editor/contrib/hover/browser/hoverActions', 'goToTopHoverDescription', 'Go to the top of the editor hover.'),
              },
          });
      }
@@ -5718,7 +5718,7 @@ index 45a117446f60531cf48d2b6ff26103dfa1963e01..94d8972a9fe7079cb2e7c1832c9e7267
              },
              metadata: {
 -                description: nls.localize2('goToBottomHoverDescription', 'Go to the bottom of the editor hover.')
-+                description: nls.localize2('vs/editor/contrib/hover/browser/hoverActions', 'vs/editor/contrib/hover/browser/hoverActions', 'goToBottomHoverDescription', 'Go to the bottom of the editor hover.')
++                description: nls.localize2('vs/editor/contrib/hover/browser/hoverActions', 'goToBottomHoverDescription', 'Go to the bottom of the editor hover.')
              },
          });
      }
@@ -5851,7 +5851,7 @@ index 20b8b4fa552445da5927ebeacb6b15e3fff3e054..76dae0c406b13a21a9e3d522153a1d76
              precondition: EditorContextKeys.writable,
              kbOpts: {
 diff --git a/esm/vs/editor/contrib/indentation/browser/indentation.js b/esm/vs/editor/contrib/indentation/browser/indentation.js
-index 670212fe32dbba0e7383b2de6b77cd3959d6a743..9bb242d133ecb8ecdd3123d4593907cdf1c2e6b6 100644
+index 670212fe32dbba0e7383b2de6b77cd3959d6a743..58fdf832db0a8bf1da26000629e43df18405ec93 100644
 --- a/esm/vs/editor/contrib/indentation/browser/indentation.js
 +++ b/esm/vs/editor/contrib/indentation/browser/indentation.js
 @@ -30,11 +30,11 @@ export class IndentationToSpacesAction extends EditorAction {
@@ -5864,7 +5864,7 @@ index 670212fe32dbba0e7383b2de6b77cd3959d6a743..9bb242d133ecb8ecdd3123d4593907cd
              precondition: EditorContextKeys.writable,
              metadata: {
 -                description: nls.localize2('indentationToSpacesDescription', "Convert the tab indentation to spaces."),
-+                description: nls.localize2('vs/editor/contrib/indentation/browser/indentation', 'vs/editor/contrib/indentation/browser/indentation', 'indentationToSpacesDescription', "Convert the tab indentation to spaces."),
++                description: nls.localize2('vs/editor/contrib/indentation/browser/indentation', 'indentationToSpacesDescription', "Convert the tab indentation to spaces."),
              }
          });
      }
@@ -5878,7 +5878,7 @@ index 670212fe32dbba0e7383b2de6b77cd3959d6a743..9bb242d133ecb8ecdd3123d4593907cd
              precondition: EditorContextKeys.writable,
              metadata: {
 -                description: nls.localize2('indentationToTabsDescription', "Convert the spaces indentation to tabs."),
-+                description: nls.localize2('vs/editor/contrib/indentation/browser/indentation', 'vs/editor/contrib/indentation/browser/indentation', 'indentationToTabsDescription', "Convert the spaces indentation to tabs."),
++                description: nls.localize2('vs/editor/contrib/indentation/browser/indentation', 'indentationToTabsDescription', "Convert the spaces indentation to tabs."),
              }
          });
      }
@@ -5914,7 +5914,7 @@ index 670212fe32dbba0e7383b2de6b77cd3959d6a743..9bb242d133ecb8ecdd3123d4593907cd
              precondition: undefined,
              metadata: {
 -                description: nls.localize2('indentUsingTabsDescription', "Use indentation with tabs."),
-+                description: nls.localize2('vs/editor/contrib/indentation/browser/indentation', 'vs/editor/contrib/indentation/browser/indentation', 'indentUsingTabsDescription', "Use indentation with tabs."),
++                description: nls.localize2('vs/editor/contrib/indentation/browser/indentation', 'indentUsingTabsDescription', "Use indentation with tabs."),
              }
          });
      }
@@ -5928,7 +5928,7 @@ index 670212fe32dbba0e7383b2de6b77cd3959d6a743..9bb242d133ecb8ecdd3123d4593907cd
              precondition: undefined,
              metadata: {
 -                description: nls.localize2('indentUsingSpacesDescription', "Use indentation with spaces."),
-+                description: nls.localize2('vs/editor/contrib/indentation/browser/indentation', 'vs/editor/contrib/indentation/browser/indentation', 'indentUsingSpacesDescription', "Use indentation with spaces."),
++                description: nls.localize2('vs/editor/contrib/indentation/browser/indentation', 'indentUsingSpacesDescription', "Use indentation with spaces."),
              }
          });
      }
@@ -5942,7 +5942,7 @@ index 670212fe32dbba0e7383b2de6b77cd3959d6a743..9bb242d133ecb8ecdd3123d4593907cd
              precondition: undefined,
              metadata: {
 -                description: nls.localize2('changeTabDisplaySizeDescription', "Change the space size equivalent of the tab."),
-+                description: nls.localize2('vs/editor/contrib/indentation/browser/indentation', 'vs/editor/contrib/indentation/browser/indentation', 'changeTabDisplaySizeDescription', "Change the space size equivalent of the tab."),
++                description: nls.localize2('vs/editor/contrib/indentation/browser/indentation', 'changeTabDisplaySizeDescription', "Change the space size equivalent of the tab."),
              }
          });
      }
@@ -5956,7 +5956,7 @@ index 670212fe32dbba0e7383b2de6b77cd3959d6a743..9bb242d133ecb8ecdd3123d4593907cd
              precondition: undefined,
              metadata: {
 -                description: nls.localize2('detectIndentationDescription', "Detect the indentation from content."),
-+                description: nls.localize2('vs/editor/contrib/indentation/browser/indentation', 'vs/editor/contrib/indentation/browser/indentation', 'detectIndentationDescription', "Detect the indentation from content."),
++                description: nls.localize2('vs/editor/contrib/indentation/browser/indentation', 'detectIndentationDescription', "Detect the indentation from content."),
              }
          });
      }
@@ -5970,7 +5970,7 @@ index 670212fe32dbba0e7383b2de6b77cd3959d6a743..9bb242d133ecb8ecdd3123d4593907cd
              precondition: EditorContextKeys.writable,
              metadata: {
 -                description: nls.localize2('editor.reindentlinesDescription', "Reindent the lines of the editor."),
-+                description: nls.localize2('vs/editor/contrib/indentation/browser/indentation', 'vs/editor/contrib/indentation/browser/indentation', 'editor.reindentlinesDescription', "Reindent the lines of the editor."),
++                description: nls.localize2('vs/editor/contrib/indentation/browser/indentation', 'editor.reindentlinesDescription', "Reindent the lines of the editor."),
              }
          });
      }
@@ -5984,7 +5984,7 @@ index 670212fe32dbba0e7383b2de6b77cd3959d6a743..9bb242d133ecb8ecdd3123d4593907cd
              precondition: EditorContextKeys.writable,
              metadata: {
 -                description: nls.localize2('editor.reindentselectedlinesDescription', "Reindent the selected lines of the editor."),
-+                description: nls.localize2('vs/editor/contrib/indentation/browser/indentation', 'vs/editor/contrib/indentation/browser/indentation', 'editor.reindentselectedlinesDescription', "Reindent the selected lines of the editor."),
++                description: nls.localize2('vs/editor/contrib/indentation/browser/indentation', 'editor.reindentselectedlinesDescription', "Reindent the selected lines of the editor."),
              }
          });
      }
@@ -6210,7 +6210,7 @@ index a39e76ac2a0660dc70f80e93d47a8fc066f67fd1..51a1b7fec8748dfea2c83a0a785232db
          this.inlineCompletionsActionsMenus = this._register(this._menuService.createMenu(MenuId.InlineCompletionsActions, this._contextKeyService));
          this.clearAvailableSuggestionCountLabelDebounced = this._register(new RunOnceScheduler(() => {
 diff --git a/esm/vs/editor/contrib/inlineEdits/browser/commands.js b/esm/vs/editor/contrib/inlineEdits/browser/commands.js
-index 3ce288e2bc4912f6a81c1f5764d6ff54534e0d86..3cdfb0cd1d2055232fb6269f9297b3456cfb6257 100644
+index 3ce288e2bc4912f6a81c1f5764d6ff54534e0d86..ab9598e5c71ec052671a6938de813c4da0e58193 100644
 --- a/esm/vs/editor/contrib/inlineEdits/browser/commands.js
 +++ b/esm/vs/editor/contrib/inlineEdits/browser/commands.js
 @@ -24,7 +24,7 @@ export class ShowNextInlineEditAction extends EditorAction {
@@ -6218,7 +6218,7 @@ index 3ce288e2bc4912f6a81c1f5764d6ff54534e0d86..3cdfb0cd1d2055232fb6269f9297b345
          super({
              id: ShowNextInlineEditAction.ID,
 -            ...labelAndAlias(nls.localize2('action.inlineEdits.showNext', "Show Next Inline Edit")),
-+            ...labelAndAlias(nls.localize2('vs/editor/contrib/inlineEdits/browser/commands', 'vs/editor/contrib/inlineEdits/browser/commands', 'action.inlineEdits.showNext', "Show Next Inline Edit")),
++            ...labelAndAlias(nls.localize2('vs/editor/contrib/inlineEdits/browser/commands', 'action.inlineEdits.showNext', "Show Next Inline Edit")),
              precondition: ContextKeyExpr.and(EditorContextKeys.writable, inlineEditVisible),
              kbOpts: {
                  weight: 100,
@@ -6227,7 +6227,7 @@ index 3ce288e2bc4912f6a81c1f5764d6ff54534e0d86..3cdfb0cd1d2055232fb6269f9297b345
          super({
              id: ShowPreviousInlineEditAction.ID,
 -            ...labelAndAlias(nls.localize2('action.inlineEdits.showPrevious', "Show Previous Inline Edit")),
-+            ...labelAndAlias(nls.localize2('vs/editor/contrib/inlineEdits/browser/commands', 'vs/editor/contrib/inlineEdits/browser/commands', 'action.inlineEdits.showPrevious', "Show Previous Inline Edit")),
++            ...labelAndAlias(nls.localize2('vs/editor/contrib/inlineEdits/browser/commands', 'action.inlineEdits.showPrevious', "Show Previous Inline Edit")),
              precondition: ContextKeyExpr.and(EditorContextKeys.writable, inlineEditVisible),
              kbOpts: {
                  weight: 100,
@@ -6236,7 +6236,7 @@ index 3ce288e2bc4912f6a81c1f5764d6ff54534e0d86..3cdfb0cd1d2055232fb6269f9297b345
          super({
              id: 'editor.action.inlineEdits.trigger',
 -            ...labelAndAlias(nls.localize2('action.inlineEdits.trigger', "Trigger Inline Edit")),
-+            ...labelAndAlias(nls.localize2('vs/editor/contrib/inlineEdits/browser/commands', 'vs/editor/contrib/inlineEdits/browser/commands', 'action.inlineEdits.trigger', "Trigger Inline Edit")),
++            ...labelAndAlias(nls.localize2('vs/editor/contrib/inlineEdits/browser/commands', 'action.inlineEdits.trigger', "Trigger Inline Edit")),
              precondition: EditorContextKeys.writable
          });
      }
@@ -6245,7 +6245,7 @@ index 3ce288e2bc4912f6a81c1f5764d6ff54534e0d86..3cdfb0cd1d2055232fb6269f9297b345
          super({
              id: inlineEditAcceptId,
 -            ...labelAndAlias(nls.localize2('action.inlineEdits.accept', "Accept Inline Edit")),
-+            ...labelAndAlias(nls.localize2('vs/editor/contrib/inlineEdits/browser/commands', 'vs/editor/contrib/inlineEdits/browser/commands', 'action.inlineEdits.accept', "Accept Inline Edit")),
++            ...labelAndAlias(nls.localize2('vs/editor/contrib/inlineEdits/browser/commands', 'action.inlineEdits.accept', "Accept Inline Edit")),
              precondition: inlineEditVisible,
              menuOpts: {
                  menuId: MenuId.InlineEditsActions,
@@ -6259,7 +6259,7 @@ index 3ce288e2bc4912f6a81c1f5764d6ff54534e0d86..3cdfb0cd1d2055232fb6269f9297b345
          super({
              id: 'editor.action.inlineEdits.pin',
 -            ...labelAndAlias(nls.localize2('action.inlineEdits.pin', "Pin Inline Edit")),
-+            ...labelAndAlias(nls.localize2('vs/editor/contrib/inlineEdits/browser/commands', 'vs/editor/contrib/inlineEdits/browser/commands', 'action.inlineEdits.pin', "Pin Inline Edit")),
++            ...labelAndAlias(nls.localize2('vs/editor/contrib/inlineEdits/browser/commands', 'action.inlineEdits.pin', "Pin Inline Edit")),
              precondition: undefined,
              kbOpts: {
                  primary: KeyMod.Shift | KeyCode.Space,
@@ -6286,7 +6286,7 @@ index 3ce288e2bc4912f6a81c1f5764d6ff54534e0d86..3cdfb0cd1d2055232fb6269f9297b345
          super({
              id: HideInlineEdit.ID,
 -            ...labelAndAlias(nls.localize2('action.inlineEdits.hide', "Hide Inline Edit")),
-+            ...labelAndAlias(nls.localize2('vs/editor/contrib/inlineEdits/browser/commands', 'vs/editor/contrib/inlineEdits/browser/commands', 'action.inlineEdits.hide', "Hide Inline Edit")),
++            ...labelAndAlias(nls.localize2('vs/editor/contrib/inlineEdits/browser/commands', 'action.inlineEdits.hide', "Hide Inline Edit")),
              precondition: inlineEditVisible,
              kbOpts: {
                  weight: 100,
@@ -7141,7 +7141,7 @@ index f0a567f71e2e75eefdc31327874f6600b9de811a..2e5a352c1a60e5786b94f1053ae44501
              }
              messageController.showMessage(message, this.editor.getPosition());
 diff --git a/esm/vs/editor/contrib/rename/browser/rename.js b/esm/vs/editor/contrib/rename/browser/rename.js
-index 6c017355ee896fc4947a83b2722bf89e62be2479..3145d1b50b659122d407eca3f37109e88f18e3ac 100644
+index 6c017355ee896fc4947a83b2722bf89e62be2479..01c4a211c8734dfc060a46e57bb4711ff887d8ad 100644
 --- a/esm/vs/editor/contrib/rename/browser/rename.js
 +++ b/esm/vs/editor/contrib/rename/browser/rename.js
 @@ -99,7 +99,7 @@ class RenameSkeleton {
@@ -7205,7 +7205,7 @@ index 6c017355ee896fc4947a83b2722bf89e62be2479..3145d1b50b659122d407eca3f37109e8
              id: 'focusNextRenameSuggestion',
              title: {
 -                ...nls.localize2('focusNextRenameSuggestion', "Focus Next Rename Suggestion"),
-+                ...nls.localize2('vs/editor/contrib/rename/browser/rename', 'vs/editor/contrib/rename/browser/rename', 'focusNextRenameSuggestion', "Focus Next Rename Suggestion"),
++                ...nls.localize2('vs/editor/contrib/rename/browser/rename', 'focusNextRenameSuggestion', "Focus Next Rename Suggestion"),
              },
              precondition: CONTEXT_RENAME_INPUT_VISIBLE,
              keybinding: [
@@ -7214,7 +7214,7 @@ index 6c017355ee896fc4947a83b2722bf89e62be2479..3145d1b50b659122d407eca3f37109e8
              id: 'focusPreviousRenameSuggestion',
              title: {
 -                ...nls.localize2('focusPreviousRenameSuggestion', "Focus Previous Rename Suggestion"),
-+                ...nls.localize2('vs/editor/contrib/rename/browser/rename', 'vs/editor/contrib/rename/browser/rename', 'focusPreviousRenameSuggestion', "Focus Previous Rename Suggestion"),
++                ...nls.localize2('vs/editor/contrib/rename/browser/rename', 'focusPreviousRenameSuggestion', "Focus Previous Rename Suggestion"),
              },
              precondition: CONTEXT_RENAME_INPUT_VISIBLE,
              keybinding: [
@@ -7363,7 +7363,7 @@ index febb884de643c3222960907d4f40773b6109319d..d2ba464b809c60ed51076f761ecc895c
          const { name } = variable;
          if (name === 'CURRENT_YEAR') {
 diff --git a/esm/vs/editor/contrib/stickyScroll/browser/stickyScrollActions.js b/esm/vs/editor/contrib/stickyScroll/browser/stickyScrollActions.js
-index ed60c82ba4dd13541a5eb83abc1630b15a61cf8a..5d3d3bba48834e2770edde3afa3944cc687c0782 100644
+index ed60c82ba4dd13541a5eb83abc1630b15a61cf8a..5455bd4adc28132b9f2afedacfbe707fa984c041 100644
 --- a/esm/vs/editor/contrib/stickyScroll/browser/stickyScrollActions.js
 +++ b/esm/vs/editor/contrib/stickyScroll/browser/stickyScrollActions.js
 @@ -15,17 +15,17 @@ export class ToggleStickyScroll extends Action2 {
@@ -7372,12 +7372,12 @@ index ed60c82ba4dd13541a5eb83abc1630b15a61cf8a..5d3d3bba48834e2770edde3afa3944cc
              title: {
 -                ...localize2('toggleEditorStickyScroll', "Toggle Editor Sticky Scroll"),
 -                mnemonicTitle: localize({ key: 'mitoggleStickyScroll', comment: ['&& denotes a mnemonic'] }, "&&Toggle Editor Sticky Scroll"),
-+                ...localize2('vs/editor/contrib/stickyScroll/browser/stickyScrollActions', 'vs/editor/contrib/stickyScroll/browser/stickyScrollActions', 'toggleEditorStickyScroll', "Toggle Editor Sticky Scroll"),
++                ...localize2('vs/editor/contrib/stickyScroll/browser/stickyScrollActions', 'toggleEditorStickyScroll', "Toggle Editor Sticky Scroll"),
 +                mnemonicTitle: localize('vs/editor/contrib/stickyScroll/browser/stickyScrollActions', { key: 'mitoggleStickyScroll', comment: ['&& denotes a mnemonic'] }, "&&Toggle Editor Sticky Scroll"),
              },
              metadata: {
 -                description: localize2('toggleEditorStickyScroll.description', "Toggle/enable the editor sticky scroll which shows the nested scopes at the top of the viewport"),
-+                description: localize2('vs/editor/contrib/stickyScroll/browser/stickyScrollActions', 'vs/editor/contrib/stickyScroll/browser/stickyScrollActions', 'toggleEditorStickyScroll.description', "Toggle/enable the editor sticky scroll which shows the nested scopes at the top of the viewport"),
++                description: localize2('vs/editor/contrib/stickyScroll/browser/stickyScrollActions', 'toggleEditorStickyScroll.description', "Toggle/enable the editor sticky scroll which shows the nested scopes at the top of the viewport"),
              },
              category: Categories.View,
              toggled: {
@@ -7395,7 +7395,7 @@ index ed60c82ba4dd13541a5eb83abc1630b15a61cf8a..5d3d3bba48834e2770edde3afa3944cc
              title: {
 -                ...localize2('focusStickyScroll', "Focus on the editor sticky scroll"),
 -                mnemonicTitle: localize({ key: 'mifocusStickyScroll', comment: ['&& denotes a mnemonic'] }, "&&Focus Sticky Scroll"),
-+                ...localize2('vs/editor/contrib/stickyScroll/browser/stickyScrollActions', 'vs/editor/contrib/stickyScroll/browser/stickyScrollActions', 'focusStickyScroll', "Focus on the editor sticky scroll"),
++                ...localize2('vs/editor/contrib/stickyScroll/browser/stickyScrollActions', 'focusStickyScroll', "Focus on the editor sticky scroll"),
 +                mnemonicTitle: localize('vs/editor/contrib/stickyScroll/browser/stickyScrollActions', { key: 'mifocusStickyScroll', comment: ['&& denotes a mnemonic'] }, "&&Focus Sticky Scroll"),
              },
              precondition: ContextKeyExpr.and(ContextKeyExpr.has('config.editor.stickyScroll.enabled'), EditorContextKeys.stickyScrollVisible),
@@ -7405,7 +7405,7 @@ index ed60c82ba4dd13541a5eb83abc1630b15a61cf8a..5d3d3bba48834e2770edde3afa3944cc
          super({
              id: 'editor.action.selectNextStickyScrollLine',
 -            title: localize2('selectNextStickyScrollLine.title', "Select the next editor sticky scroll line"),
-+            title: localize2('vs/editor/contrib/stickyScroll/browser/stickyScrollActions', 'vs/editor/contrib/stickyScroll/browser/stickyScrollActions', 'selectNextStickyScrollLine.title', "Select the next editor sticky scroll line"),
++            title: localize2('vs/editor/contrib/stickyScroll/browser/stickyScrollActions', 'selectNextStickyScrollLine.title', "Select the next editor sticky scroll line"),
              precondition: EditorContextKeys.stickyScrollFocused.isEqualTo(true),
              keybinding: {
                  weight,
@@ -7414,7 +7414,7 @@ index ed60c82ba4dd13541a5eb83abc1630b15a61cf8a..5d3d3bba48834e2770edde3afa3944cc
          super({
              id: 'editor.action.selectPreviousStickyScrollLine',
 -            title: localize2('selectPreviousStickyScrollLine.title', "Select the previous sticky scroll line"),
-+            title: localize2('vs/editor/contrib/stickyScroll/browser/stickyScrollActions', 'vs/editor/contrib/stickyScroll/browser/stickyScrollActions', 'selectPreviousStickyScrollLine.title', "Select the previous sticky scroll line"),
++            title: localize2('vs/editor/contrib/stickyScroll/browser/stickyScrollActions', 'selectPreviousStickyScrollLine.title', "Select the previous sticky scroll line"),
              precondition: EditorContextKeys.stickyScrollFocused.isEqualTo(true),
              keybinding: {
                  weight,
@@ -7423,7 +7423,7 @@ index ed60c82ba4dd13541a5eb83abc1630b15a61cf8a..5d3d3bba48834e2770edde3afa3944cc
          super({
              id: 'editor.action.goToFocusedStickyScrollLine',
 -            title: localize2('goToFocusedStickyScrollLine.title', "Go to the focused sticky scroll line"),
-+            title: localize2('vs/editor/contrib/stickyScroll/browser/stickyScrollActions', 'vs/editor/contrib/stickyScroll/browser/stickyScrollActions', 'goToFocusedStickyScrollLine.title', "Go to the focused sticky scroll line"),
++            title: localize2('vs/editor/contrib/stickyScroll/browser/stickyScrollActions', 'goToFocusedStickyScrollLine.title', "Go to the focused sticky scroll line"),
              precondition: EditorContextKeys.stickyScrollFocused.isEqualTo(true),
              keybinding: {
                  weight,
@@ -7432,7 +7432,7 @@ index ed60c82ba4dd13541a5eb83abc1630b15a61cf8a..5d3d3bba48834e2770edde3afa3944cc
          super({
              id: 'editor.action.selectEditor',
 -            title: localize2('selectEditor.title', "Select Editor"),
-+            title: localize2('vs/editor/contrib/stickyScroll/browser/stickyScrollActions', 'vs/editor/contrib/stickyScroll/browser/stickyScrollActions', 'selectEditor.title', "Select Editor"),
++            title: localize2('vs/editor/contrib/stickyScroll/browser/stickyScrollActions', 'selectEditor.title', "Select Editor"),
              precondition: EditorContextKeys.stickyScrollFocused.isEqualTo(true),
              keybinding: {
                  weight,
@@ -7792,7 +7792,7 @@ index b8572e4dde4ed54852605f51cafbda95267504cb..72466e1be49ec0fa7334c60f5bb772a3
 -}, localize('symbolIcon.variableForeground', 'The foreground color for variable symbols. These symbols appear in the outline, breadcrumb, and suggest widget.'));
 +}, localize('vs/editor/contrib/symbolIcons/browser/symbolIcons', 'symbolIcon.variableForeground', 'The foreground color for variable symbols. These symbols appear in the outline, breadcrumb, and suggest widget.'));
 diff --git a/esm/vs/editor/contrib/toggleTabFocusMode/browser/toggleTabFocusMode.js b/esm/vs/editor/contrib/toggleTabFocusMode/browser/toggleTabFocusMode.js
-index 276af5c8b1dc4fa58b743988e04a3f0303abd18e..bc913d0f77b4d18f680e743c8e99f4c9012e7807 100644
+index 276af5c8b1dc4fa58b743988e04a3f0303abd18e..e7ea1234e780d50d64d830c0e25f9095c71d7d27 100644
 --- a/esm/vs/editor/contrib/toggleTabFocusMode/browser/toggleTabFocusMode.js
 +++ b/esm/vs/editor/contrib/toggleTabFocusMode/browser/toggleTabFocusMode.js
 @@ -11,7 +11,7 @@ export class ToggleTabFocusModeAction extends Action2 {
@@ -7800,7 +7800,7 @@ index 276af5c8b1dc4fa58b743988e04a3f0303abd18e..bc913d0f77b4d18f680e743c8e99f4c9
          super({
              id: ToggleTabFocusModeAction.ID,
 -            title: nls.localize2({ key: 'toggle.tabMovesFocus', comment: ['Turn on/off use of tab key for moving focus around VS Code'] }, 'Toggle Tab Key Moves Focus'),
-+            title: nls.localize2('vs/editor/contrib/toggleTabFocusMode/browser/toggleTabFocusMode', 'vs/editor/contrib/toggleTabFocusMode/browser/toggleTabFocusMode', { key: 'toggle.tabMovesFocus', comment: ['Turn on/off use of tab key for moving focus around VS Code'] }, 'Toggle Tab Key Moves Focus'),
++            title: nls.localize2('vs/editor/contrib/toggleTabFocusMode/browser/toggleTabFocusMode', { key: 'toggle.tabMovesFocus', comment: ['Turn on/off use of tab key for moving focus around VS Code'] }, 'Toggle Tab Key Moves Focus'),
              precondition: undefined,
              keybinding: {
                  primary: 2048 /* KeyMod.CtrlCmd */ | 43 /* KeyCode.KeyM */,
@@ -7809,7 +7809,7 @@ index 276af5c8b1dc4fa58b743988e04a3f0303abd18e..bc913d0f77b4d18f680e743c8e99f4c9
              },
              metadata: {
 -                description: nls.localize2('tabMovesFocusDescriptions', "Determines whether the tab key moves focus around the workbench or inserts the tab character in the current editor. This is also called tab trapping, tab navigation, or tab focus mode."),
-+                description: nls.localize2('vs/editor/contrib/toggleTabFocusMode/browser/toggleTabFocusMode', 'vs/editor/contrib/toggleTabFocusMode/browser/toggleTabFocusMode', 'tabMovesFocusDescriptions', "Determines whether the tab key moves focus around the workbench or inserts the tab character in the current editor. This is also called tab trapping, tab navigation, or tab focus mode."),
++                description: nls.localize2('vs/editor/contrib/toggleTabFocusMode/browser/toggleTabFocusMode', 'tabMovesFocusDescriptions', "Determines whether the tab key moves focus around the workbench or inserts the tab character in the current editor. This is also called tab trapping, tab navigation, or tab focus mode."),
              },
              f1: true
          });
@@ -8109,28 +8109,26 @@ index 37c988bbd6aea3fc51ab29dee9bf35898e67e9c0..84e2917557280d07352c3f053d4e645e
          });
      }
 diff --git a/esm/vs/nls.js b/esm/vs/nls.js
-index 608714ffda2f89415ecda3c2e69bda6b5e70e18e..e22db3234156f00a846e8c1b33fc1fc5550fd58d 100644
+index 608714ffda2f89415ecda3c2e69bda6b5e70e18e..32c1777bf6f47a2299daef49af4417c1bba28b69 100644
 --- a/esm/vs/nls.js
 +++ b/esm/vs/nls.js
-@@ -2,29 +2,37 @@
-  *  Copyright (c) Microsoft Corporation. All rights reserved.
-  *  Licensed under the MIT License. See License.txt in the project root for license information.
-  *--------------------------------------------------------------------------------------------*/
--// eslint-disable-next-line local/code-import-patterns
- import { getNLSLanguage, getNLSMessages } from './nls.messages.js';
--// eslint-disable-next-line local/code-import-patterns
+@@ -7,69 +7,102 @@ import { getNLSLanguage, getNLSMessages } from './nls.messages.js';
+ // eslint-disable-next-line local/code-import-patterns
  export { getNLSLanguage, getNLSMessages } from './nls.messages.js';
-+
  const isPseudo = getNLSLanguage() === 'pseudo' || (typeof document !== 'undefined' && document.location && document.location.hash.indexOf('pseudo=true') >= 0);
 -function _format(message, args) {
+-    let result;
 +
-+function _format(message='', args) {
-     let result;
++function _format(message = "", args = []) {
++    let result
      if (args.length === 0) {
-         result = message;
-     }
-     else {
--        result = message.replace(/\{(\d+)\}/g, (match, rest) => {
+-        result = message;
+-    }
+-    else {
++      result = message
++    } else {
++      try {
+         result = message.replace(/\{(\d+)\}/g, (match, rest) => {
 -            const index = rest[0];
 -            const arg = args[index];
 -            let result = match;
@@ -8139,72 +8137,142 @@ index 608714ffda2f89415ecda3c2e69bda6b5e70e18e..e22db3234156f00a846e8c1b33fc1fc5
 -            }
 -            else if (typeof arg === 'number' || typeof arg === 'boolean' || arg === void 0 || arg === null) {
 -                result = String(arg);
-+        try {
-+
-+            result = message.replace(/\{(\d+)\}/g, (match, rest) => {
-+                const index = rest[0];
-+                const arg = args[index];
-+                let result = match;
-+                if (typeof arg === 'string') {
-+                    result = arg;
-+                }
-+                else if (typeof arg === 'number' || typeof arg === 'boolean' || arg === void 0 || arg === null) {
-+                    result = String(arg);
-+                }
-+                return result;
-+            });
-+        }
-+        catch (e) {
-+            if (globalThis?.__MONACO__DEBUG__) {
-+                console.warn('Localization format error', e);
-             }
+-            }
 -            return result;
 -        });
++          const index = rest[0]
++          const arg = args[index]
++          let result = match
++          if (typeof arg === "string") {
++            result = arg
++          } else if (typeof arg === "number" || typeof arg === "boolean" || arg === void 0 || arg === null) {
++            result = String(arg)
++          }
++          return result
++        })
++      } catch (e) {
++        if (globalThis?.__MONACO__DEBUG__) {
++          console.warn("Localization format error", e)
 +        }
++      }
      }
      if (isPseudo) {
-         // FF3B and FF3D is the Unicode zenkaku representation for [ and ]
-@@ -32,15 +40,25 @@ function _format(message, args) {
+-        // FF3B and FF3D is the Unicode zenkaku representation for [ and ]
+-        result = '\uFF3B' + result.replace(/[aouei]/g, '$&$&') + '\uFF3D';
++      // FF3B and FF3D is the Unicode zenkaku representation for [ and ]
++      result = "\uFF3B" + result.replace(/[aouei]/g, "$&$&") + "\uFF3D"
      }
-     return result;
- }
+-    return result;
+-}
 -/**
 - * @skipMangle
 - */
 -export function localize(data /* | number when built */, message /* | null when built */, ...args) {
-+
-+export function localize(path, data, defaultMessage, ...args ) {
-+    const translations = globalThis?.__MONACO_TRANSLATIONS__ || {};
-+    const key = typeof data === 'object' ? data.key : data;
-+    const translation = translations[path]?.[key];
-+
-+    if (!translation && globalThis?.__MONACO__DEBUG__) {
-+        console.warn(`No translation found for "${path}.${key}"\n\nUsing default message: "${defaultMessage}"`);
-+    }
-+
-+    const message = translation || defaultMessage;
-+
-     if (typeof data === 'number') {
-         return _format(lookupMessage(data, message), args);
+-    if (typeof data === 'number') {
+-        return _format(lookupMessage(data, message), args);
++    return result || message
++  }
++  
++  export function localize(path, data, defaultMessage, ...args) {
++    const key = typeof data === "object" ? data.key : data
++    const translations = getTranslations()
++    const translation = getTranslation(path, key, defaultMessage)
++  
++    if (!translation) warnMissingTranslation(path, key, defaultMessage)
++  
++    const message = translation || defaultMessage
++  
++    if (typeof data === "number") {
++      return _format(lookupMessage(data, message), args)
      }
-+
-     return _format(message, args);
- }
-+
- /**
-  * Only used when built: Looks up the message in the global NLS table.
-  * This table is being made available as a global through bootstrapping
-@@ -56,9 +74,7 @@ function lookupMessage(index, fallback) {
+-    return _format(message, args);
+-}
+-/**
+- * Only used when built: Looks up the message in the global NLS table.
+- * This table is being made available as a global through bootstrapping
+- * depending on the target context.
+- */
+-function lookupMessage(index, fallback) {
+-    const message = getNLSMessages()?.[index];
+-    if (typeof message !== 'string') {
+-        if (typeof fallback === 'string') {
+-            return fallback;
+-        }
+-        throw new Error(`!!! NLS MISSING: ${index} !!!`);
++  
++    return _format(message, args)
++  }
++  
++  /**
++   * Only used when built: Looks up the message in the global NLS table.
++   * This table is being made available as a global through bootstrapping
++   * depending on the target context.
++   */
++  function lookupMessage(index, fallback) {
++    const message = getNLSMessages()?.[index]
++    if (typeof message !== "string") {
++      if (typeof fallback === "string") {
++        return fallback
++      }
++      throw new Error(`!!! NLS MISSING: ${index} !!!`)
      }
-     return message;
- }
+-    return message;
+-}
 -/**
 - * @skipMangle
 - */
-+
- export function localize2(data /* | number when built */, originalMessage, ...args) {
-     let message;
-     if (typeof data === 'number') {
+-export function localize2(data /* | number when built */, originalMessage, ...args) {
+-    let message;
+-    if (typeof data === 'number') {
+-        message = lookupMessage(data, originalMessage);
++    return message
++  }
++  
++  export function localize2(path, data, defaultMessage, ...args) {
++    const key = typeof data === "object" ? data.key : data
++    const translations = getTranslations()
++    const translation = getTranslation(path, key, defaultMessage)
++  
++    if (!translation) warnMissingTranslation(path, key, defaultMessage)
++  
++    const message = translation || defaultMessage
++    const value = _format(message, args)
++  
++    return {
++      value,
++      original: defaultMessage === message ? value : _format(defaultMessage, args),
+     }
+-    else {
+-        message = originalMessage;
++  }
++  
++  function getTranslation(path, key, defaultMessage) {
++    try {
++      return translations[path]?.[key]
++    } catch (e) {
++      if (globalThis?.__MONACO__DEBUG__) {
++        console.warn("Translation lookup error", e)
++      }
++      return undefined
+     }
+-    const value = _format(message, args);
+-    return {
+-        value,
+-        original: originalMessage === message ? value : _format(originalMessage, args)
+-    };
+-}
++  }
++  
++  function getTranslations() {
++    return globalThis?.__MONACO_TRANSLATIONS__ || {}
++  }
++  
++  function warnMissingTranslation(path, key, defaultMessage) {
++    if (globalThis?.__MONACO__DEBUG__) {
++      console.warn(`No translation found for "${path}.${key}"\n\nUsing default message: "${defaultMessage}"`)
++    }
++  }
+\ No newline at end of file
 diff --git a/esm/vs/platform/accessibilitySignal/browser/accessibilitySignalService.js b/esm/vs/platform/accessibilitySignal/browser/accessibilitySignalService.js
 index 68478ea930dbf4dcdc1338cffce51945d8f19a42..0347e0fa0250b9954d7691dcdd6fda92b6ae1830 100644
 --- a/esm/vs/platform/accessibilitySignal/browser/accessibilitySignalService.js
@@ -8469,7 +8537,7 @@ index 68478ea930dbf4dcdc1338cffce51945d8f19a42..0347e0fa0250b9954d7691dcdd6fda92
          legacySoundSettingsKey: 'audioCues.voiceRecordingStopped',
          settingsKey: 'accessibility.signals.voiceRecordingStopped'
 diff --git a/esm/vs/platform/action/common/actionCommonCategories.js b/esm/vs/platform/action/common/actionCommonCategories.js
-index e53faa0681c9fb127373cdc71cb83f21cd125751..df2fe45a9118c53d52ecfe573aad47bee6e4d2be 100644
+index e53faa0681c9fb127373cdc71cb83f21cd125751..abbe3cf558b37baef12da73606c86107f35a6b2f 100644
 --- a/esm/vs/platform/action/common/actionCommonCategories.js
 +++ b/esm/vs/platform/action/common/actionCommonCategories.js
 @@ -4,10 +4,10 @@
@@ -8482,12 +8550,12 @@ index e53faa0681c9fb127373cdc71cb83f21cd125751..df2fe45a9118c53d52ecfe573aad47be
 -    File: localize2('file', 'File'),
 -    Preferences: localize2('preferences', 'Preferences'),
 -    Developer: localize2({ key: 'developer', comment: ['A developer on Code itself or someone diagnosing issues in Code'] }, "Developer"),
-+    View: localize2('vs/platform/action/common/actionCommonCategories', 'vs/platform/action/common/actionCommonCategories', 'view', 'View'),
-+    Help: localize2('vs/platform/action/common/actionCommonCategories', 'vs/platform/action/common/actionCommonCategories', 'help', 'Help'),
-+    Test: localize2('vs/platform/action/common/actionCommonCategories', 'vs/platform/action/common/actionCommonCategories', 'test', 'Test'),
-+    File: localize2('vs/platform/action/common/actionCommonCategories', 'vs/platform/action/common/actionCommonCategories', 'file', 'File'),
-+    Preferences: localize2('vs/platform/action/common/actionCommonCategories', 'vs/platform/action/common/actionCommonCategories', 'preferences', 'Preferences'),
-+    Developer: localize2('vs/platform/action/common/actionCommonCategories', 'vs/platform/action/common/actionCommonCategories', { key: 'developer', comment: ['A developer on Code itself or someone diagnosing issues in Code'] }, "Developer"),
++    View: localize2('vs/platform/action/common/actionCommonCategories', 'view', 'View'),
++    Help: localize2('vs/platform/action/common/actionCommonCategories', 'help', 'Help'),
++    Test: localize2('vs/platform/action/common/actionCommonCategories', 'test', 'Test'),
++    File: localize2('vs/platform/action/common/actionCommonCategories', 'file', 'File'),
++    Preferences: localize2('vs/platform/action/common/actionCommonCategories', 'preferences', 'Preferences'),
++    Developer: localize2('vs/platform/action/common/actionCommonCategories', { key: 'developer', comment: ['A developer on Code itself or someone diagnosing issues in Code'] }, "Developer"),
  });
 diff --git a/esm/vs/platform/actionWidget/browser/actionList.js b/esm/vs/platform/actionWidget/browser/actionList.js
 index d7de1f2bf6413aa2092b5e41b973e0380fc11b63..6797b99a553f52871ff9fe53fe18134724c7945e 100644
@@ -8523,7 +8591,7 @@ index d7de1f2bf6413aa2092b5e41b973e0380fc11b63..6797b99a553f52871ff9fe53fe181347
                  getWidgetRole: () => 'listbox',
              },
 diff --git a/esm/vs/platform/actionWidget/browser/actionWidget.js b/esm/vs/platform/actionWidget/browser/actionWidget.js
-index 84b2a3982a2dc6c86810987cd62c09d0947c00d4..0ec122b8330e11c2b8afe867eda61d24363f05ed 100644
+index 84b2a3982a2dc6c86810987cd62c09d0947c00d4..28756a32e8ea785e92b5a271c14718a0c4fdc21b 100644
 --- a/esm/vs/platform/actionWidget/browser/actionWidget.js
 +++ b/esm/vs/platform/actionWidget/browser/actionWidget.js
 @@ -23,9 +23,9 @@ import { IContextViewService } from '../../contextview/browser/contextView.js';
@@ -8543,7 +8611,7 @@ index 84b2a3982a2dc6c86810987cd62c09d0947c00d4..0ec122b8330e11c2b8afe867eda61d24
          super({
              id: 'hideCodeActionWidget',
 -            title: localize2('hideCodeActionWidget.title', "Hide action widget"),
-+            title: localize2('vs/platform/actionWidget/browser/actionWidget', 'vs/platform/actionWidget/browser/actionWidget', 'hideCodeActionWidget.title', "Hide action widget"),
++            title: localize2('vs/platform/actionWidget/browser/actionWidget', 'hideCodeActionWidget.title', "Hide action widget"),
              precondition: ActionWidgetContextKeys.Visible,
              keybinding: {
                  weight,
@@ -8552,7 +8620,7 @@ index 84b2a3982a2dc6c86810987cd62c09d0947c00d4..0ec122b8330e11c2b8afe867eda61d24
          super({
              id: 'selectPrevCodeAction',
 -            title: localize2('selectPrevCodeAction.title', "Select previous action"),
-+            title: localize2('vs/platform/actionWidget/browser/actionWidget', 'vs/platform/actionWidget/browser/actionWidget', 'selectPrevCodeAction.title', "Select previous action"),
++            title: localize2('vs/platform/actionWidget/browser/actionWidget', 'selectPrevCodeAction.title', "Select previous action"),
              precondition: ActionWidgetContextKeys.Visible,
              keybinding: {
                  weight,
@@ -8561,7 +8629,7 @@ index 84b2a3982a2dc6c86810987cd62c09d0947c00d4..0ec122b8330e11c2b8afe867eda61d24
          super({
              id: 'selectNextCodeAction',
 -            title: localize2('selectNextCodeAction.title', "Select next action"),
-+            title: localize2('vs/platform/actionWidget/browser/actionWidget', 'vs/platform/actionWidget/browser/actionWidget', 'selectNextCodeAction.title', "Select next action"),
++            title: localize2('vs/platform/actionWidget/browser/actionWidget', 'selectNextCodeAction.title', "Select next action"),
              precondition: ActionWidgetContextKeys.Visible,
              keybinding: {
                  weight,
@@ -8570,7 +8638,7 @@ index 84b2a3982a2dc6c86810987cd62c09d0947c00d4..0ec122b8330e11c2b8afe867eda61d24
          super({
              id: acceptSelectedActionCommand,
 -            title: localize2('acceptSelected.title', "Accept selected action"),
-+            title: localize2('vs/platform/actionWidget/browser/actionWidget', 'vs/platform/actionWidget/browser/actionWidget', 'acceptSelected.title', "Accept selected action"),
++            title: localize2('vs/platform/actionWidget/browser/actionWidget', 'acceptSelected.title', "Accept selected action"),
              precondition: ActionWidgetContextKeys.Visible,
              keybinding: {
                  weight,
@@ -8579,7 +8647,7 @@ index 84b2a3982a2dc6c86810987cd62c09d0947c00d4..0ec122b8330e11c2b8afe867eda61d24
          super({
              id: previewSelectedActionCommand,
 -            title: localize2('previewSelected.title', "Preview selected action"),
-+            title: localize2('vs/platform/actionWidget/browser/actionWidget', 'vs/platform/actionWidget/browser/actionWidget', 'previewSelected.title', "Preview selected action"),
++            title: localize2('vs/platform/actionWidget/browser/actionWidget', 'previewSelected.title', "Preview selected action"),
              precondition: ActionWidgetContextKeys.Visible,
              keybinding: {
                  weight,
@@ -10060,145 +10128,3 @@ index ff9670aa5735e067733c370109ec03b6fbfa3469..5a3c78593a46a5d37b6ad577fec299c5
  export const STANDALONE_EDITOR_WORKSPACE_ID = '4064f6ec-cb38-4ad0-af64-ee6467e63c82';
  export function isStandaloneEditorWorkspace(workspace) {
      return workspace.id === STANDALONE_EDITOR_WORKSPACE_ID;
-diff --git a/index.ts b/index.ts
-new file mode 100644
-index 0000000000000000000000000000000000000000..55f220e10afa8ffb90efad287380b11196af453e
---- /dev/null
-+++ b/index.ts
-@@ -0,0 +1,136 @@
-+import {readdir, readFile, writeFile} from 'fs/promises'
-+import {join, resolve} from 'path'
-+
-+main()
-+
-+async function main(): Promise<void> {
-+  try {
-+    const [, , relativePath] = process.argv
-+    if (!relativePath) {
-+      console.error('Please provide a path argument:')
-+      console.error('Usage: node transform-files.js <relative_path>')
-+      process.exit(1)
-+    }
-+
-+    await transformFiles({
-+      path: relativePath,
-+      transform: transformMonacoEditor,
-+    })
-+  } catch (error) {
-+    console.error('Error:', error)
-+    process.exit(1)
-+  }
-+}
-+
-+/**
-+ * Transforms Monaco Editor source files by modifying localize function calls to include the file path.
-+ * This is specifically for files within the monaco-editor directory that contain localize function calls.
-+ */
-+async function transformMonacoEditor(
-+  // The full path to the file being processed
-+  filepath: string,
-+  // The source content of the file
-+  source: string,
-+): Promise<string | null> {
-+  if (filepath.includes('esm')) {
-+    const regex = /esm\/(.+)\.js/
-+    const match = filepath.match(regex)
-+
-+    if (match) {
-+      const path = match[1]
-+
-+      if (source.includes('localize2(')) {
-+        const result = source.replace(
-+          /(\bfunction\s+localize2\()|(\blocalize2\()/g,
-+          text => {
-+            const isFunctionStatement = /function\s+localize/.test(text)
-+
-+            if (isFunctionStatement) {
-+              console.log(`Function statement, skipping...`)
-+
-+              return text
-+            }
-+
-+            console.log(`Replacing localize2( with localize2('${path}', ...)`)
-+
-+            return `localize2('${path}', `
-+          },
-+        )
-+
-+        return result
-+      }
-+    }
-+  }
-+
-+  return null
-+}
-+
-+/**
-+ * Configuration options for the file transformer
-+ */
-+type TransformOptions = {
-+  path: string
-+  transform: (filepath: string, source: string) => Promise<string | null>
-+}
-+
-+/**
-+ * Transforms files in the specified directory using the provided transform function
-+ */
-+async function transformFiles(options: TransformOptions): Promise<void> {
-+  try {
-+    const {path: dirPath, transform} = options
-+    const resolvedPath = resolve(dirPath)
-+    const files = await getAllFiles(resolvedPath)
-+
-+    const transformations = files
-+      .map(async filepath => {
-+        try {
-+          const source = await readFile(filepath, 'utf-8')
-+          const result = await transform(filepath, source)
-+
-+          if (typeof result !== 'string') {
-+            return null
-+          }
-+
-+          await writeFile(filepath, result, 'utf-8')
-+
-+          return filepath
-+        } catch (error) {
-+          console.error(`Error processing file ${filepath}:`, error)
-+          throw error
-+        }
-+      })
-+      .filter(Boolean)
-+
-+    await Promise.all(transformations)
-+
-+    console.log(
-+      `Successfully transformed ${files.length} files in ${resolvedPath}`,
-+    )
-+  } catch (error) {
-+    console.error('Error during file transformation:', error)
-+    throw error
-+  }
-+}
-+
-+/**
-+ * Gets all files in a directory recursively
-+ */
-+async function getAllFiles(
-+  dirPath: string,
-+  fileList: string[] = [],
-+): Promise<string[]> {
-+  const files = await readdir(dirPath, {withFileTypes: true})
-+
-+  for (const file of files) {
-+    const fullPath = join(dirPath, file.name)
-+
-+    if (file.isDirectory()) {
-+      await getAllFiles(fullPath, fileList)
-+    } else {
-+      fileList.push(fullPath)
-+    }
-+  }
-+
-+  return fileList
-+}
