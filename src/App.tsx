@@ -1,90 +1,49 @@
-import reactLogo from "./assets/react.svg"
-import viteLogo from "/vite.svg"
-import "./App.css"
+import './editor/editor-worker-context.ts'
+import './editor/editor-worker.ts'
 
-import { Locale, translationsMap } from "./monaco-editor/locales"
-import "./monaco-editor/initialize-monaco-worker"
-import { MonacoEditor, MonacoEditorLanguage } from "./monaco-editor/monaco-editor"
-import { useState } from "react"
+import {Editor} from './editor/editor'
+import {Locale, readCurrentLocale, saveCurrentLocale, SUPPORTED_LOCALES} from './i18n.ts'
 
-const currentLocale = (window.localStorage.getItem("locale") || "en") as Locale
-
-window.__MONACO_TRANSLATIONS__ = translationsMap[currentLocale]
-
-function setLocale(locale: Locale) {
-  window.__MONACO_TRANSLATIONS__ = translationsMap[locale]
-  window.localStorage.setItem("locale", locale)
-  window.location.reload()
-}
-
-const localeOptions = [
-  { locale: "es", label: "🇪🇸 Spain" },
-  { locale: "en", label: "🇬🇧 English" },
-  { locale: "de", label: "🇩🇪 Germany" },
-  { locale: "pl", label: "🇵🇱 Poland" },
-] satisfies { locale: Locale; label: string }[]
-
-const languageOptions = [
-  { language: "json", label: "JSON 📄" },
-  { language: "css", label: "CSS 🎨" },
-  { language: "html", label: "HTML 🌐" },
-  { language: "typescript", label: "TypeScript 🛠️" },
-  { language: "javascript", label: "JavaScript ✨" },
-] satisfies { language: MonacoEditorLanguage; label: string }[]
+const currentLocale = readCurrentLocale()
 
 export function App() {
-  const [editorLanguage, setEditorLanguage] = useState<MonacoEditorLanguage>("javascript")
+  const onLocaleChange = (locale: Locale) => {
+    saveCurrentLocale(locale)
+
+    /**
+     * Unfortunately, `monaco-editor` doesn't support changing the language at runtime.
+     * https://github.com/microsoft/monaco-editor/issues/4669
+     */
+    window.location.reload()
+  }
+
+  const labels = {
+    es: '🇪🇸 Español',
+    en: '🇬🇧 English',
+    de: '🇩🇪 Deutsch',
+    pl: '🇵🇱 Polski',
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
+      <fieldset>
+        <legend>Choose language</legend>
 
-      {localeOptions.map(({ locale, label }) => (
-        <label key={locale}>
-          <input
-            checked={currentLocale === locale}
-            type="radio"
-            name="locale"
-            value={locale}
-            onChange={() => setLocale(locale)}
-          />
-          {label}
-        </label>
-      ))}
+        {SUPPORTED_LOCALES.map(locale => (
+          <label key={locale}>
+            <input
+              type="radio"
+              name="locale"
+              value={locale}
+              checked={locale === currentLocale}
+              onChange={() => onLocaleChange(locale)}
+            />
+            {labels[locale]}
+          </label>
+        ))}
+      </fieldset>
 
-      <br />
-
-      {languageOptions.map(({ language, label }) => (
-        <label key={language}>
-          <input
-            checked={editorLanguage === language}
-            type="radio"
-            name="language"
-            value={language}
-            onChange={() => setEditorLanguage(language)}
-          />
-          {label}
-        </label>
-      ))}
-
-      <br />
-      <br />
-
-      <MonacoEditor
-        value="//"
-        height="50vh"
-        width="75vw"
-        theme="vs-dark"
-        language={editorLanguage}
-        // language="javascript"
-      />
+      <Editor />
     </>
   )
 }

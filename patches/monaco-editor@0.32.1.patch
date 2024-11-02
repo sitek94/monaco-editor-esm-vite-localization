@@ -1,0 +1,15 @@
+diff --git a/esm/vs/nls.js b/esm/vs/nls.js
+index 95ef602e6b689058fe3cc5d29ab09612591195c0..d378b8834d8a499bdd82dc53e96e8a821f8db0e5 100644
+--- a/esm/vs/nls.js
++++ b/esm/vs/nls.js
+@@ -15,6 +15,9 @@ function _format(message, args) {
+     }
+     return result;
+ }
+-export function localize(data, message, ...args) {
++
++export function localize(data, originalMessage, ...args) {
++    const message = window.__TRANSLATIONS__?.[originalMessage] || originalMessage;
++
+     return _format(message, args);
+ }
